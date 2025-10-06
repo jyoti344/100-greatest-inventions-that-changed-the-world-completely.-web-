@@ -52,6 +52,13 @@ a website for the world government that contains data about 100 greatest inventi
 ### change "$pass","$db" inside config.php according to your db details
 ### Then RightClick inside index.php select "PHP server: Searve project"
 
+### you-tube link:
+   make sure when adding new invention video you use <u><b>embed</b></u> link  not normal link 
+   otherwise it won't work beacuse you-tube gonna refuse the video acess request
+
+   ### getting embed ink:
+    go to the video you want -> share -> embed -> then it will show a <iframe> snippet, copy the link from the <iframe> src
+
 
 
           
