@@ -1,0 +1,133 @@
+:root {
+    --primary: #1a237e;
+    --secondary: #283593;
+    --accent: #3f51b5;
+    --light: #f5f5f5;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: var(--primary) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.page {
+    display: none;
+}
+
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.auth-container {
+    max-width: 450px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.inventions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.invention-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.invention-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.invention-card h3 {
+    color: #ffffff;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+    padding-bottom: 10px;
+}
+
+.invention-info {
+    margin-bottom: 15px;
+}
+
+.invention-info strong {
+    color: #000000;
+    display: inline-block;
+    width: 80px;
+}
+
+.video-container {
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+.close-modal {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+}
+
+.admin-panel {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.stats-card {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    margin: 20px 0;
+}
+
+.filter-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
