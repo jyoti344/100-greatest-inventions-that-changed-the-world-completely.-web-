@@ -3,23 +3,37 @@ session_start();
 include "config.php";
 
 $username = $_POST['username'];
-$password = md5($_POST['password']); 
+$password = md5($_POST['password']);
 
-$sql = "SELECT * FROM users WHERE username=? AND password=?";
+// First, check if username exists
+$sql = "SELECT * FROM users WHERE username=?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $username, $password);
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if($row = $result->fetch_assoc()) {
-    $_SESSION['role'] = $row['role'];
-    $_SESSION['username'] = $row['username'];
-    if($row['role'] === 'admin') {
-        header("Location: admin.php");
+    // Username exists, now check password
+    if($row['password'] === $password) {
+        $_SESSION['role'] = $row['role'];
+        $_SESSION['username'] = $row['username'];
+        if($row['role'] === 'admin') {
+            header("Location: admin.php");
+            exit();
+        } else {
+            header("Location: inventions.php");
+            exit();
+        }
     } else {
-        header("Location: inventions.php");
+        // Wrong password
+        $_SESSION['login_error'] = "Incorrect password!";
+        header("Location: login.php");
+        exit();
     }
 } else {
-    header("Location: = signup.php");
+    // Username does not exist
+    $_SESSION['login_error'] = "User does not exist. Please sign up.";
+    header("Location: signup.php");
+    exit();
 }
 ?>

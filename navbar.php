@@ -12,7 +12,17 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="inventions.php">Inventions</a></li>
+
+        <?php
+          // Check if user is logged in
+          if(isset($_SESSION['role']) && ($_SESSION['role'] === 'user' || $_SESSION['role'] === 'admin')) {
+              echo '<li class="nav-item"><a class="nav-link" href="inventions.php">Inventions</a></li>';
+          } else {
+              echo '<li class="nav-item"><a class="nav-link" href="login.php">Inventions</a></li>';
+          }
+          ?>
+
+
         <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
           <li class="nav-item"><a class="nav-link" href="admin.php">Admin</a></li>
           <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>

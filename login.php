@@ -16,6 +16,10 @@
       <div class="alert alert-success"><?php echo $_SESSION['signup_success']; unset($_SESSION['signup_success']); ?></div>
     <?php endif; ?>
 
+    <?php if(isset($_SESSION['login_error'])): ?>
+    <div class="alert alert-danger"><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></div>
+    <?php endif; ?>
+
     <form method="post" action="process_login.php">
       <input type="text" name="username" class="form-control mb-3" placeholder="Email" required>
       <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
