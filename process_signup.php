@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($check->num_rows > 0) {
         // username exists → back to signup with error
-        $_SESSION['signup_error'] = "Username already exists!";
+        $_SESSION['signup_error'] = "Email already exists!";
         header("Location: signup.php");
         exit;
     } else {
