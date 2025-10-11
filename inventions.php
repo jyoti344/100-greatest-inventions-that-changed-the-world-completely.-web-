@@ -84,7 +84,10 @@ $result = $conn->query($sql);
             <div class="invention-card" data-bs-toggle="modal" data-bs-target="#inventionModal<?php echo $id; ?>">
                 <h3><?php echo $row['name']; ?></h3>
                 <div class="video-container">
-                    <iframe width="100%" height="200" src="<?php echo $row['video_url']; ?>" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="200" 
+                        src="<?php echo $row['video_url']; ?>" 
+                        frameborder="0" allowfullscreen
+                        loading="lazy"></iframe>
                 </div>
                 <br>
                 <div class="invention-info"><h6><strong>Creator:</strong> <?php echo $row['creator']; ?></h6></div>
@@ -108,10 +111,13 @@ $result = $conn->query($sql);
                         <h4 style="color: #667eea; margin-bottom: 10px;">Description & Impact:</h4>
                         <p style="line-height: 1.6; margin-bottom: 20px;"><?php echo $row['description']; ?></p>
                         <?php if($row['video_url']): ?>
-                        <h4 style="color: #667eea; margin-bottom: 10px;">Demo Video:</h4>
-                        <div style="border-radius: 12px; overflow: hidden;">
-                            <iframe width="100%" height="400" src="<?php echo $row['video_url']; ?>" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                            <h4 style="color: #667eea; margin-bottom: 10px;">Demo Video:</h4>
+                            <div style="border-radius: 12px; overflow: hidden;">
+                                <iframe width="100%" height="400" 
+                                    src="<?php echo $row['video_url']; ?>" 
+                                    frameborder="0" allowfullscreen
+                                    loading="lazy"></iframe>
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>
