@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "R12#$5si";
-$db   = "world_inovation";
+$pass = "your_pass";
+$db   = "your_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
